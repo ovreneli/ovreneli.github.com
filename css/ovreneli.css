@@ -1,0 +1,17 @@
+body {
+  padding-top: 50px;
+}
+#fb-root {
+  display: none;
+}
+.navbar-fixed-top .brand {
+  float: right;
+}
+.share-buttons {
+  border-bottom: 1px solid #999;
+  margin-bottom: 10px;
+}
+.share-buttons li {
+  float: left;
+  margin: 0 4px;
+}
