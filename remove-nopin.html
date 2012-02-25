@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Pinterest "nopin" problem | ovreneli.github.com</title>
+<link rel="stylesheet" href="css/bootstrap.min.css"/>
+<link rel="stylesheet" href="css/bootstrap-responsive.min.css"/>
+<link rel="stylesheet" href="css/ovreneli.css"/>
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<meta name="pinterest" content="nopin"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="ovreneli.github.com"/>
+<meta property="og:locale" content="ja_JP"/>
+<meta property="fb:app_id" content="248108891944687"/>
+<style>.pin-it { margin-left: 10px; }</style>
+<script src="js/ovreneli-ga.js"></script>
+</head>
+<body>
+
+<div id="fb-root"></div>
+<script src="js/ovreneli-share.js"></script>
+
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="/">ovreneli.github.com</a>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span2">
+      sidebar is under construction
+    </div><!-- /span2 -->
+
+    <div class="span10">
+      <header>
+        <h1>Pinterest "nopin" problem</h1>
+        <p class="date">2012-02-25</p>
+        <ul class="share-buttons unstyled clearfix">
+          <li><a href="https://twitter.com/share" class="twitter-share-button" data-via="ovreneli">Tweet</a></li>
+          <li><fb:like send="false" layout="button_count" width="100" show_faces="false"></fb:like></li>
+          <li><g:plusone size="medium" annotation="none"></g:plusone></li>
+          <li><script type="IN/Share" data-counter="right"></script></li>
+        </ul>
+      </header>
+
+      <section>
+        <p>Having a code to block Pinterest, so you can't pin images from this page.<button class="pin-it" class="btn">Pin It</button></p>
+        <pre>&lt;meta name="pinterest" content="nopin"/&gt;</pre>
+        <p>If you click <button id="remove-nopin" class="btn btn-warning"><strong>Remove "nopin"</strong></button> button, the "nopin" code is removed dynamically.</p>
+        <p>Reload this page and click the button, you can pin images.<button class="pin-it" class="btn">Pin It</button></p>
+        <p></p>
+        <p>What a pity!</p>
+        <p><img src="img/36b6zh.jpg"/></p>
+      </section>
+
+      <div id="disqus_thread"></div>
+      <script src="js/ovreneli-disqus.js"></script>
+    </div><!-- /span10 -->
+  </div><!-- /row-fluid -->
+
+</div><!-- /container-fluid -->
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script>
+$(function() {
+  $('.pin-it').click(function() {
+    var e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e);
+  });
+  $('#remove-nopin').one('click', function() {
+    $('meta[name=pinterest][content=nopin]').remove();
+    $(this).addClass('disabled');
+  });
+});
+</script>
+
+</body>
+</html>

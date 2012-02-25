@@ -7,6 +7,9 @@ body {
 .navbar-fixed-top .brand {
   float: right;
 }
+header .date {
+  text-align: right;
+}
 .share-buttons {
   border-bottom: 1px solid #999;
   margin-bottom: 10px;
